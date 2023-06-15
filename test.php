@@ -1,0 +1,1 @@
+<?php echo password_hash("2001-03-04", PASSWORD_DEFAULT)?>
