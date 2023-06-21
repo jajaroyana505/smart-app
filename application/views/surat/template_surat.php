@@ -27,7 +27,7 @@
                 <div class="fs-5 fw-bolder">RUKUN TETANGGA <?= $rt ?>/<?= $rw ?></div>
                 <div class="fs-6 fw-bolder">KELURAHAN CIKAMPEK TIMUR </div>
                 <div class="fs-6 fw-bolder">KECAMATAN CIKAMPEK KABUPATEN KARAWANG</div>
-               
+
             </div>
         </div>
         <div class="text-center mt-5">
@@ -93,7 +93,7 @@
 
     <script>
         // window.open()
-        // window.print()
+        window.print()
     </script>
 </body>
 

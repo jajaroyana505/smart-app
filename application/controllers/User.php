@@ -106,32 +106,32 @@ class User extends CI_Controller
 		$this->load->view('template/user_footer.php');
 	}
 
-	// public function profile()
-	// {
-	// 	$data = [
-	// 		"nik" => $this->session->userdata('nik'),
-	// 		"nama" => $this->session->userdata('nama'),
-	// 		"kelamin" => $this->session->userdata('kelamin'),
-	// 		"ttl" => $this->session->userdata('tempat_lahir') . ", " . format_tanggal($this->session->userdata('tanggal_lahir')),
-	// 		"jabatan" => $this->session->userdata('role'),
-	// 	];
-	// 	$data['title'] = "Profile";
-	// 	$this->load->view('template/header.php', $data);
-	// 	$this->load->view('template/sidebar.php');
-	// 	$this->load->view('ketua_rt/profile.php', $data);
-	// 	$this->load->view('template/footer.php');
-	// }
+	public function profile()
+	{
+		$data = [
+			"nik" => $this->session->userdata('nik'),
+			"nama" => $this->session->userdata('nama'),
+			"kelamin" => $this->session->userdata('kelamin'),
+			"ttl" => $this->session->userdata('tempat_lahir') . ", " . format_tanggal($this->session->userdata('tanggal_lahir')),
+			"jabatan" => $this->session->userdata('role'),
+		];
+		$data['title'] = "Profile";
+		$this->load->view('template/header.php', $data);
+		$this->load->view('template/sidebar.php');
+		$this->load->view('ketua_rt/profile.php', $data);
+		$this->load->view('template/footer.php');
+	}
 
-	// public function detail_penduduk()
-	// {
-	// 	$data['title'] = "Detail";
+	public function detail_penduduk()
+	{
+		$data['title'] = "Detail";
 
 
-	// 	$this->load->view('template/header', $data);
-	// 	$this->load->view('template/sidebar');
-	// 	$this->load->view('penduduk/detail_penduduk.php', $data);
-	// 	$this->load->view('template/footer.php');
-	// }
+		$this->load->view('template/header', $data);
+		$this->load->view('template/sidebar');
+		$this->load->view('penduduk/detail_penduduk.php', $data);
+		$this->load->view('template/footer.php');
+	}
 
 	public function ubah()
 	{
