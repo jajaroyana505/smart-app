@@ -56,8 +56,8 @@
                   <div class="col mr-2">
                     <div class="text-s font-weight-bold text-secondary text-uppercase mb-1">
                       Daftar</div>
-                    <div class="h4 mb-0 font-weight-bold text-success">Tetangga Saya</div>
-                    <a href="<?= base_url('user/tetangga') ?>" class="btn btn-success mt-3">Lihat Tetangga</a>
+                    <div class="h4 mb-0 font-weight-bold text-success">Daftar Penduduk</div>
+                    <a href="<?= base_url('user/tetangga') ?>" class="btn btn-success mt-3">Lihat Penduduk</a>
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-solid fa-users fa-4x text-gray-300"></i>

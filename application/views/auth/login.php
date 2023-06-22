@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="nik">Password</label>
-                                            <input name="password" type="text" class="form-control " id="password">
+                                            <input name="password" type="password" class="form-control " id="password">
                                         </div>
                                         <small>Password default YYYY-MM-DD</small>
                                         <hr>
