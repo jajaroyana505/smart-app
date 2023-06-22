@@ -116,10 +116,10 @@ class User extends CI_Controller
 			"jabatan" => $this->session->userdata('role'),
 		];
 		$data['title'] = "Profile";
-		
-		$this->load->view('template/user_header.php', $data);
-		$this->load->view('user/detail_penduduk.php', $data);
-		$this->load->view('template/user_footer.php');
+		$this->load->view('template/header.php', $data);
+		$this->load->view('template/sidebar.php');
+		$this->load->view('ketua_rt/profile.php', $data);
+		$this->load->view('template/footer.php');
 	}
 
 	public function detail_penduduk()
