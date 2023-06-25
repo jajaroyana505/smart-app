@@ -49,10 +49,10 @@
                                 <select id="rt" class="form-control" name="agama">
 
                                     <option value="Islam" <?= $data_penduduk->agama == "Islam" ? 'selected' : ''; ?>>Islam</option>
-                                    <option value="Hindu" <?= $data_penduduk->agama == "Hindu" ? 'selected' : ''; ?>>Islam</option>
-                                    <option value="Budha" <?= $data_penduduk->agama == "Khatolik" ? 'selected' : ''; ?>>Islam</option>
-                                    <option value="Kristen" <?= $data_penduduk->agama == "Kristen" ? 'selected' : ''; ?>>Islam</option>
-                                    <option value="Khatolik" <?= $data_penduduk->agama == "Khatolik" ? 'selected' : ''; ?>>Islam</option>
+                                    <option value="Hindu" <?= $data_penduduk->agama == "Hindu" ? 'selected' : ''; ?>>Hindu</option>
+                                    <option value="Budha" <?= $data_penduduk->agama == "Budha" ? 'selected' : ''; ?>>Budha</option>
+                                    <option value="Kristen" <?= $data_penduduk->agama == "Kristen" ? 'selected' : ''; ?>>Kristen</option>
+                                    <option value="Khatolik" <?= $data_penduduk->agama == "Khatolik" ? 'selected' : ''; ?>>Khatolik</option>
 
                                 </select>
                                 <div class="invalid-feedback">
