@@ -10,6 +10,11 @@ class Model_penduduk extends CI_Model
         $this->role = $this->session->userdata('role');
     }
 
+    public function getAll()
+    {
+        return $this->db->get('penduduk')->result_array();
+    }
+
     public function tambah($kode_alamat)
     {
         $this->nik = $this->input->post('nik');
