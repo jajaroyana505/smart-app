@@ -45,7 +45,7 @@ class Model_penduduk extends CI_Model
             'nama_ayah' => $this->input->post('nama_ayah'),
             'nama_ibu' => $this->input->post('nama_ibu'),
         ];
-        return $this->db->update('penduduk', $data, "id = $id");;
+        return $this->db->update('penduduk', $data, "id = $id");
     }
     public function cek_nik($nik)
     {

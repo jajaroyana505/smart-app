@@ -16,12 +16,14 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama</th>
-                            <th scope="col">Tanggal</th>
+                            <th scope="col">Tanggal Datang</th>
+                            <th scope="col">Tanggal Pergi</th>
                             <th scope="col">Asal Tamu</th>
                             <th scope="col">Maksud Kedatangan</th>
                             <th scope="col">Keluarga Yang Dituju</th>
                             <th scope="col">Kode RT</th>
                             <th scope="col">KTP</th>
+                            <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,6 +33,13 @@
                                 <th><?= ++$i ?></th>
                                 <td><?= $_tamu->nama ?></td>
                                 <td><?= format_tanggal($_tamu->tanggal) ?></td>
+                                <td>
+                                    <?php if ($_tamu->tanggal_pergi == "" or $_tamu->tanggal_pergi == "NULL") { ?>
+                                        <span class="text-secondary"><i class="fa fa-exclamation-circle fa-lg"></i> &nbsp; Tamu Belum Pergi</span>
+                                    <?php } else { ?>
+                                        <?= format_tanggal($_tamu->tanggal) ?>
+                                    <?php } ?>
+                                </td>
                                 <td><?= $_tamu->alamat ?></td>
                                 <td><?= $_tamu->keperluan ?>
                                 </td>
@@ -43,6 +52,15 @@
                                         </button>
                                     </center>
                                 </td>
+                                <td>
+                                    <a href="<?= base_url('tamu/form_ubah_tamu/') . $_tamu->id_tamu ?>" class="btn btn-success btn-icon-split mb-3">
+                                        <center>
+                                            <button type="button" class="btn btn-success">
+                                                Ubah
+                                            </button>
+                                        </center>
+                                    </a>
+                                </td>
                             </tr>
 
                         <?php } ?>
@@ -53,7 +71,7 @@
     </div>
 </div>
 <?php foreach ($tamu as $_tamu) { ?>
-    <div class="modal fade" id="id_<?= $_tamu->id_tamu ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class=" modal fade" id="id_<?= $_tamu->id_tamu ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

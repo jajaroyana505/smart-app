@@ -99,4 +99,24 @@ class Model_tamu extends CI_Model
             return $data['file_name'];
         }
     }
+
+    public function getTamuById($id_tamu)
+    {
+        $result = $this->db->get_where('tamu', $id_tamu)->row_object();
+        return $result;
+    }
+
+    public function update_data($id_tamu)
+    {
+        $data = [
+            'nama' => $this->input->post('nama'),
+            'keluarga_tujuan' => $this->input->post('kel_tujuan'),
+            'keperluan' => $this->input->post('keperluan'),
+            'alamat' => $this->input->post('alamat'),
+            'tanggal' => $this->input->post('tanggal'),
+            'tanggal_pergi' => $this->input->post('tanggal_pergi'),
+            'ktp' => $this->upload('upload'),
+        ];
+        return $this->db->update('tamu', $data, "id_tamu = $id_tamu");
+    }
 }
