@@ -119,7 +119,6 @@ class Surat extends CI_Controller
         $this->load->view('template/footer');
     }
 
-
     public function riwayat_pengajuan()
     {
         $data['riwayat'] = $this->surat->get_riwayat();
@@ -128,5 +127,12 @@ class Surat extends CI_Controller
         $this->load->view('template/sidebar');
         $this->load->view('surat/riwayat_surat', $data);
         $this->load->view('template/footer');
+    }
+
+    public function hapusSurat()
+    {
+        $where = ['no_surat' => $this->uri->segment(3)];
+        $this->surat->hapusSurat($where);
+        redirect('surat');
     }
 }

@@ -27,10 +27,11 @@ class Model_surat extends CI_Model
         $this->db->limit(6);
         return $this->db->get()->result_object();
     }
+
     public function get_suratByNik()
     {
         $nik = $this->session->userdata('nik');
-        $this->db->select("no_surat,nama,jenis,status");
+        $this->db->select("no_surat,nama,jenis,status,alasan");
         $this->db->from("surat");
         $this->db->join("penduduk", "penduduk.nik=surat.nik");
         $this->db->join('alamat', 'alamat.kode_alamat=penduduk.kode_alamat');
@@ -138,6 +139,7 @@ class Model_surat extends CI_Model
             ),
         ];
     }
+
     public function buat()
     {
         $data = [
@@ -155,6 +157,7 @@ class Model_surat extends CI_Model
     {
         return $this->db->get("surat")->num_rows();
     }
+
     public function hitung_surat_terbuat()
     {
         $this->db->from('surat');
@@ -171,7 +174,8 @@ class Model_surat extends CI_Model
     public function tolak_pengajuan($no_surat)
     {
         $data = [
-            "status" => 0
+            "status" => 0,
+            "alasan" => $this->input->post("alasan"),
         ];
         $this->db->where('no_surat', $no_surat);
         return $this->db->update('surat', $data);
@@ -186,5 +190,10 @@ class Model_surat extends CI_Model
 
         $this->db->where('no_surat', $no_surat);
         return $this->db->update('surat', $data);
+    }
+
+    public function hapusSurat($where = null)
+    {
+        $this->db->delete('surat', $where);
     }
 }

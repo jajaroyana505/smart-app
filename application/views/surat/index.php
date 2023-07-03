@@ -1,4 +1,4 @@
-<div class="col-lg">
+<div class="col">
     <a href="#" class="btn mb-3 btn-success btn-icon-split" data-toggle="modal" data-target="#suratModal">
         <span class="icon text-white">
             <i class="fa-solid fa-file-circle-plus"></i>
@@ -15,7 +15,7 @@
         <div class="col-md-4">
 
             <div class="card shadow mb-4">
-                <div class="card-header text-success  py-3">
+                <div class="card-header text-success py-3">
                     <h6 class="m-0 font-weight-bold"><i class="fa-solid fa-list-check mr-2"></i>Daftar Pengajuan</h6>
                 </div>
                 <div class="card-body p-sm-0">
@@ -48,7 +48,7 @@
                                                     <small class="font-italic"><?= format_tanggal($_pengajuan->tanggal) ?></small>
                                                 </div>
                                                 <div class="col-md-auto">
-                                                    <a href="<?= base_url('surat/tolak/') . $_pengajuan->no_surat ?>" class="p-2 badge badge-danger"><i class="fa-solid fa-xmark"></i> Tolak</a>
+                                                    <a data-toggle="modal" data-target="#tolakModal" class="p-2 badge badge-danger" style="cursor: pointer;"><i class="fa-solid fa-xmark"></i> Tolak</a>
                                                     <a href="<?= base_url('surat/terima/') . $_pengajuan->no_surat ?>" class="p-2 badge badge-success"><i class="fa-solid fa-check"></i> Setujui</a>
                                                 </div>
                                             </div>
@@ -68,7 +68,7 @@
                     <h6 class="m-0 font-weight-bold"><i class="fa-solid fa-envelopes-bulk mr-2"></i>Surat Terbuat</h6>
                 </div>
                 <div class="card-body table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered text-center">
                         <thead>
                             <tr>
                                 <th scope="col">No.</th>
@@ -90,46 +90,22 @@
                                     </td>
                                     <td><?= $_surat->nama ?></td>
                                     <td>
-                                        <center>
-                                            <a href="<?= base_url('surat/detail/') . $_surat->no_surat ?>" class="btn btn-info btn-circle btn-sm">
-                                                <i class="fas fa-info"></i>
-                                            </a>
-                                            <a target="_blank" href="<?= base_url('surat/cetak_surat/') . $_surat->no_surat ?>" class="btn btn-warning btn-circle btn-sm">
-                                                <i class="fas fa-print"></i>
-                                            </a>
-                                        </center>
+                                        <a href="<?= base_url('surat/detail/') . $_surat->no_surat ?>" class="btn btn-info btn-circle btn-sm">
+                                            <i class="fas fa-info"></i>
+                                        </a>
+                                        <a target="_blank" href="<?= base_url('surat/cetak_surat/') . $_surat->no_surat ?>" class="btn btn-warning btn-circle btn-sm">
+                                            <i class="fas fa-print"></i>
+                                        </a>
+                                        <a href="<?= base_url('surat/hapusSurat/') . $_surat->no_surat ?>" class="btn btn-danger btn-circle btn-sm">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
-
             </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="modal fade" id="suratModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-success" id="exampleModalLabel">Masukan NIK Penduduk</h5>
-                <button class="close text-success" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <form action="<?= base_url('surat/form') ?>" method="post" enctype="multipart/form-data">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="" name="nik" placeholder="NIK">
-                    </div>
-                    <button type="submit" class="btn btn-success">Next</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>
