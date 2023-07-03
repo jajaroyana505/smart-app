@@ -11,7 +11,7 @@
                 <h6 class="m-0 font-weight-bold"><i class="fa-solid fa-book mr-2"></i>Buku Tamu</h6>
             </div>
             <div class="card-body">
-                <table class="table table-bordered text-center">
+                <table class="table table-bordered table-responsive text-center">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
@@ -46,23 +46,23 @@
                                 <td><?= $_tamu->keluarga_tujuan ?></td>
                                 <td><?= $_tamu->kode_rt ?></td>
                                 <td>
-                                    <center>
-                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#id_<?= $_tamu->id_tamu ?>">
-                                            Lihat KTP
-                                        </button>
-                                    </center>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#id_<?= $_tamu->id_tamu ?>">
+                                        Lihat
+                                    </button>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url('tamu/form_ubah_tamu/') . $_tamu->id_tamu ?>" class="btn btn-success btn-icon-split mb-3">
-                                        <center>
-                                            <button type="button" class="btn btn-success">
-                                                Ubah
-                                            </button>
-                                        </center>
+                                    <a href="<?= base_url('tamu/form_ubah_tamu/') . $_tamu->id_tamu ?>">
+                                        <button type="button" class="btn btn-warning mb-2">
+                                            Ubah
+                                        </button>
+                                    </a>
+                                    <a href="<?= base_url('tamu/hapusTamu/') . $_tamu->id_tamu ?>">
+                                        <button type="button" class="btn btn-danger">
+                                            Hapus
+                                        </button>
                                     </a>
                                 </td>
                             </tr>
-
                         <?php } ?>
                     </tbody>
                 </table>

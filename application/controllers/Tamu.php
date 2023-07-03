@@ -112,4 +112,11 @@ class Tamu extends CI_Controller
             redirect(base_url("tamu"));
         }
     }
+
+    public function hapusTamu()
+    {
+        $where = ['id_tamu' => $this->uri->segment(3)];
+        $this->tamu->hapusTamu($where);
+        redirect('tamu');
+    }
 }

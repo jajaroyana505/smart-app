@@ -119,4 +119,9 @@ class Model_tamu extends CI_Model
         ];
         return $this->db->update('tamu', $data, "id_tamu = $id_tamu");
     }
+
+    public function hapusTamu($where = null)
+    {
+        $this->db->delete('tamu', $where);
+    }
 }
