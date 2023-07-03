@@ -229,21 +229,31 @@
                     <li class="list-group-item">
                       <?= $_surat->jenis == "SP" ? "Surat Pengantar" : "SK Tidak Mampu"; ?>
                       <?php if ($_surat->status == 2) { ?>
+                        <span> : </span>
                         <span class="badge badge-success ml-2">DITERIMA</span>
                         <a target="_blank" href="<?= base_url('surat/cetak_surat/') . $_surat->no_surat ?>" class="btn btn-secondary btn-circle btn-sm float-right ">
                           <i class="fas fa-print"></i>
                         </a>
-                      <?php } else if ($_surat->status == 1) { ?>
-                        <span class="badge badge-warning ml-2">MENUNGGU</span>
-                        <a class="btn btn-secondary btn-circle btn-sm float-right disabled">
-                          <i class="fa-solid fa-rotate"></i>
-                        </a>
-
-                      <?php } else { ?>
-                        <span class="badge badge-danger ml-2">DITOLAK</span>
-                        <a class="btn btn-secondary btn-circle btn-sm float-right ">
+                        <br>
+                        <br>
+                        <a href="<?= base_url('user/hapusSurat/') . $_surat->no_surat ?>" class="btn btn-secondary btn-circle btn-sm float-right ">
                           <i class="fa-solid fa-trash-can"></i>
                         </a>
+                      <?php } else if ($_surat->status == 1) { ?>
+                        <span> : </span>
+                        <span class="badge badge-warning ml-2">MENUNGGU</span>
+                        <a href="<?= base_url('user/hapusSurat/') . $_surat->no_surat ?>" class="btn btn-secondary btn-circle btn-sm float-right ">
+                          <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                      <?php } else { ?>
+                        <span> : </span>
+                        <span class="badge badge-danger ml-2">DITOLAK</span>
+                        <a href="<?= base_url('user/hapusSurat/') . $_surat->no_surat ?>" class="btn btn-secondary btn-circle btn-sm float-right ">
+                          <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                        <br>
+                        <hr>
+                        <span class="">Alasan Ditolak : <?= $_surat->alasan; ?></span>
                       <?php } ?>
                     </li>
                   <?php } ?>
