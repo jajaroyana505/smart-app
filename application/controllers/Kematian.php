@@ -62,7 +62,7 @@ class Kematian extends CI_Controller
 
         // var_dump($data['penduduk_meninggal']);
         // die;
-        $data['title'] = "Data penduduk meninggal";
+        $data['title'] = "Data Penduduk Meninggal";
 
         $this->load->view('template/header.php', $data);
         $this->load->view('template/sidebar.php');
@@ -125,7 +125,7 @@ class Kematian extends CI_Controller
             "alamat" => "$data_penduduk->nama_dusun $data_penduduk->kode_rt/$data_penduduk->kode_rw No.$data_penduduk->no_rumah"
         ];
 
-        $data['title'] = "Formulir kematian";
+        $data['title'] = "Formulir Kematian";
 
         $this->load->view('template/header.php', $data);
         $this->load->view('template/sidebar.php');
@@ -156,7 +156,7 @@ class Kematian extends CI_Controller
             "penyebab" => $data_kematian->penyebab_meninggal,
             "tempat" => $data_kematian->tempat_meninggal,
         ];
-        $data['title'] = "Detail penduduk meninggal";
+        $data['title'] = "Detail Penduduk Meninggal";
 
         $this->load->view('template/header.php', $data);
         $this->load->view('template/sidebar.php');

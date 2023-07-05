@@ -92,7 +92,7 @@ class Penduduk extends CI_Controller
 				'nama_dusun' => $this->session->userdata('nama_dusun'),
 			];
 		}
-		$data['title'] = "Form tambah penduduk";
+		$data['title'] = "Form Tambah Penduduk";
 		// var_dump($data);
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
@@ -155,7 +155,7 @@ class Penduduk extends CI_Controller
 		}
 		$data['data_penduduk'] = $data_penduduk;
 
-		$data['title'] = "Ubah data penduduk";
+		$data['title'] = "Ubah Data Penduduk";
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
 		$this->load->view('penduduk/ubah_penduduk', $data);
@@ -239,7 +239,7 @@ class Penduduk extends CI_Controller
 			"nama_ibu" => $data_penduduk->nama_ibu,
 			"foto" => $data_penduduk->foto,
 		];
-		$data['title'] = "Detail penduduk";
+		$data['title'] = "Detail Penduduk";
 
 
 		$this->load->view('template/header', $data);
