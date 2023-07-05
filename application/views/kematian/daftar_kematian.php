@@ -20,7 +20,6 @@
                                         <th>No</th>
                                         <th>NIK</th>
                                         <th>Nama</th>
-                                        <th>Umur</th>
                                         <th>Tanggal meninggal</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -32,7 +31,6 @@
                                             <td><?= ++$start; ?></td>
                                             <td><?= $_penduduk_meninggal['nik'] ?></td>
                                             <td><?= $_penduduk_meninggal['nama'] ?></td>
-                                            <td><?= $_penduduk_meninggal['umur'] ?> </td>
                                             <td><?= date("d F Y", strtotime($_penduduk_meninggal['tanggal_meninggal'])) ?> </td>
                                             <td>
                                                 <a href="<?= base_url('kematian/detail_kematian/' . $_penduduk_meninggal['id_kematian']); ?>" class="badge badge-success p-2"><i class="fas fa-search"></i> DETAIL</a>

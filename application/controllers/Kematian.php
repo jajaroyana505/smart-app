@@ -95,14 +95,14 @@ class Kematian extends CI_Controller
         }
     }
 
-    private function hitung_umur($tanggal_lahir)
+    private function hitung_umur($tanggal_lahir, $tanggal_meninggal)
     {
         $birthDate = new DateTime($tanggal_lahir);
-        $today = new DateTime("today");
-        if ($birthDate > $today) {
+        $deathDate = new DateTime($tanggal_meninggal);
+        if ($birthDate > $deathDate) {
             exit("0");
         }
-        $y = $today->diff($birthDate)->y;
+        $y = $deathDate->diff($birthDate)->y;
         return $y;
     }
 
@@ -122,7 +122,6 @@ class Kematian extends CI_Controller
             "nik" => $data_penduduk->nik,
             "nama" => $data_penduduk->nama,
             "kelamin" => $data_penduduk->kelamin,
-            "umur" => $this->hitung_umur($data_penduduk->tanggal_lahir),
             "alamat" => "$data_penduduk->nama_dusun $data_penduduk->kode_rt/$data_penduduk->kode_rw No.$data_penduduk->no_rumah"
         ];
 
@@ -153,7 +152,7 @@ class Kematian extends CI_Controller
             "alamat" => "Kp. $data_kematian->nama_dusun $data_kematian->kode_rt/$data_kematian->kode_rw No.$data_kematian->no_rumah",
             "hari" => get_hari($data_kematian->tanggal_meninggal),
             "tanggal" => format_tanggal($data_kematian->tanggal_meninggal),
-            "umur" => $data_kematian->umur . " Tahun",
+            "umur" => $this->hitung_umur($data_kematian->tanggal_lahir, $data_kematian->tanggal_meninggal) . " Tahun",
             "penyebab" => $data_kematian->penyebab_meninggal,
             "tempat" => $data_kematian->tempat_meninggal,
         ];
