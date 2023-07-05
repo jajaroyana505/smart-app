@@ -5,7 +5,6 @@
 
 <div class="container">
    <div class="card shadow">
-
       <div class="card-body">
          <?php foreach ($tetangga as $_tetangga) { ?>
             <div class="card border-left-success border-success mb-3">
@@ -23,8 +22,6 @@
                </div>
             </div>
          <?php } ?>
-
       </div>
    </div>
-
 </div>

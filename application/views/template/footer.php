@@ -8,7 +8,7 @@
 <footer class="sticky-footer bg-white mt-5" style="flex-shrink: none;">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; SMART <?= date('Y'); ?></span>
+            <span>Copyright &copy; SMARTT <?= date('Y'); ?></span>
         </div>
     </div>
 </footer>
