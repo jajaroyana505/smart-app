@@ -21,13 +21,6 @@
                                 <input type="text" class="form-control" disabled value="<?= $kelamin ?>">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Umur</label>
-                                <input type="text" class="form-control" disabled value="<?= $umur ?> Tahun">
-                                <input type="text" name="umur" value="<?= $umur ?>" hidden>
-                            </div>
-                        </div>
                     </div>
                     <div class="form-group">
                         <label>Alamat</label>
@@ -36,21 +29,21 @@
                 </div>
                 <div class="col-md-5 ">
                     <div class="form-group">
-                        <label for="tanggal_meninggal">Tanggal meninggal</label>
+                        <label for="tanggal_meninggal">Tanggal Meninggal</label>
                         <input type="date" class="form-control <?= form_error('tanggal_meninggal') ? 'is-invalid' : ''; ?>" id="tanggal_meninggal" name="tanggal_meninggal">
                         <div class="invalid-feedback">
                             <?= form_error('tanggal_meninggal'); ?>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="penyebab_meninggal">Penyebab meninggal</label>
+                        <label for="penyebab_meninggal">Penyebab Meninggal</label>
                         <input type="text" class="form-control <?= form_error('penyebab_meninggal') ? 'is-invalid' : ''; ?>" id="penyebab_meninggal" name="penyebab_meninggal">
                         <div class="invalid-feedback">
                             <?= form_error('penyebab_meninggal'); ?>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="tempat_meninggal">Tempat meninggal</label>
+                        <label for="tempat_meninggal">Tempat Meninggal</label>
                         <input type="text" class="form-control <?= form_error('tempat_meninggal') ? 'is-invalid' : ''; ?>" id="tempat_meninggal" name="tempat_meninggal">
                         <div class="invalid-feedback">
                             <?= form_error('tempat_meninggal'); ?>

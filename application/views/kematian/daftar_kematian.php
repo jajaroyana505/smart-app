@@ -20,7 +20,7 @@
                                         <th>No</th>
                                         <th>NIK</th>
                                         <th>Nama</th>
-                                        <th>Tanggal meninggal</th>
+                                        <th>Tanggal Meninggal</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
